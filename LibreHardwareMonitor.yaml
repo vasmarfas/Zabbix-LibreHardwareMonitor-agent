@@ -1,0 +1,664 @@
+zabbix_export:
+  version: '6.0'
+  date: '2024-04-01T15:58:02Z'
+  groups:
+    - uuid: 846977d1dfed4968bc5f8bdb363285bc
+      name: 'Templates/Operating systems'
+  templates:
+    - uuid: 3abd6834eb4f48429851d4b78aa02f63
+      template: LibreHardwareMonitor-Zabbix-Monitoring
+      name: LibreHardwareMonitor-Zabbix-Monitoring
+      groups:
+        - name: 'Templates/Operating systems'
+      items:
+        - uuid: e4b9c67f418d445a9dad975d92e9c402
+          name: 'CPU Core 1 Clock'
+          type: TRAP
+          key: lhm.cpuCore1Clock
+          delay: '0'
+          value_type: FLOAT
+          units: Hz
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+        - uuid: 8fa51c0f40de4976a05c78b0807066dd
+          name: 'CPU Core 1 Temp'
+          type: TRAP
+          key: lhm.cpuCore1Temp
+          delay: '0'
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+        - uuid: cabba91584ab4ff296392fedc28b1776
+          name: 'CPU Core 2 Clock'
+          type: TRAP
+          key: lhm.cpuCore2Clock
+          delay: '0'
+          value_type: FLOAT
+          units: Hz
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+        - uuid: 2793f8037e3547128c7e10fc91632479
+          name: 'CPU Core 2 Temp'
+          type: TRAP
+          key: lhm.cpuCore2Temp
+          delay: '0'
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+        - uuid: 98cbd57ed37e48f194359173adcb0647
+          name: 'CPU Core 3 Clock'
+          type: TRAP
+          key: lhm.cpuCore3Clock
+          delay: '0'
+          value_type: FLOAT
+          units: Hz
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+        - uuid: a1c5f363fbe845baadb005af910a57a9
+          name: 'CPU Core 3 Temp'
+          type: TRAP
+          key: lhm.cpuCore3Temp
+          delay: '0'
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+        - uuid: e66ad5b62990465e87873788bebf0392
+          name: 'CPU Core 4 Clock'
+          type: TRAP
+          key: lhm.cpuCore4Clock
+          delay: '0'
+          value_type: FLOAT
+          units: Hz
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+        - uuid: 361e7c6e462c4abd9a55b02589459b83
+          name: 'CPU Core 4 Temp'
+          type: TRAP
+          key: lhm.cpuCore4Temp
+          delay: '0'
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+        - uuid: 8a2576374f1345c0be971bf6f1dba2da
+          name: 'CPU Core 5 Clock'
+          type: TRAP
+          key: lhm.cpuCore5Clock
+          delay: '0'
+          value_type: FLOAT
+          units: Hz
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+        - uuid: b77d5a79e7b04fb189220f8ca6fd3077
+          name: 'CPU Core 5 Temp'
+          type: TRAP
+          key: lhm.cpuCore5Temp
+          delay: '0'
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+        - uuid: 51072f39bc4d4777bb806e62ac432189
+          name: 'CPU Core 6 Clock'
+          type: TRAP
+          key: lhm.cpuCore6Clock
+          delay: '0'
+          value_type: FLOAT
+          units: Hz
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+        - uuid: 6fbe8e89ce614e869dda516cb13e5cb6
+          name: 'CPU Core 6 Temp'
+          type: TRAP
+          key: lhm.cpuCore6Temp
+          delay: '0'
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+        - uuid: ec04b736a0bf45fe8a530ad68eb4cd30
+          name: 'CPU Core Avg Temp'
+          type: TRAP
+          key: lhm.cpuCoreAvgTemp
+          delay: '0'
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+        - uuid: ec545068080b4ea78f60691b33cb95d5
+          name: 'CPU Core Max Temp'
+          type: TRAP
+          key: lhm.cpuCoreMaxTemp
+          delay: '0'
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+        - uuid: efc26c0be6964ccdb81510e1a20c0fc0
+          name: 'CPU Package Temp'
+          type: TRAP
+          key: lhm.cpuCoreTempPackage
+          delay: '0'
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+        - uuid: 18964517c47140688a9f68222e65fede
+          name: 'CPU Power Package'
+          type: TRAP
+          key: lhm.cpuPowerPackage
+          delay: '0'
+          value_type: FLOAT
+          units: W
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+        - uuid: 5ebf0ac063f648d78d34844d3c482204
+          name: 'GPU Core Clock'
+          type: TRAP
+          key: lhm.gpuCoreClock
+          delay: '0'
+          value_type: FLOAT
+          units: Hz
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+            - type: MULTIPLIER
+              parameters:
+                - '1000000'
+        - uuid: 69502f1db75f4d12a8fa62cdd1362deb
+          name: 'GPU Core Temp'
+          type: TRAP
+          key: lhm.gpuCoreTemp
+          delay: '0'
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+        - uuid: 383d0a208b4c4c76afc22e893bd365e2
+          name: 'GPU HotSpot Temp'
+          type: TRAP
+          key: lhm.gpuHotSpotTemp
+          delay: '0'
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+        - uuid: c95e155758f848f1933c3ece81f38e64
+          name: 'GPU Power Package'
+          type: TRAP
+          key: lhm.gpuPowerPackage
+          delay: '0'
+          value_type: FLOAT
+          units: W
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
+        - uuid: 4ada8ae786dc42c0a87e3f67a21bcc6c
+          name: 'NVMe Temp'
+          type: TRAP
+          key: lhm.nvmeTemp
+          delay: '0'
+          value_type: FLOAT
+          units: °C
+          preprocessing:
+            - type: JAVASCRIPT
+              parameters:
+                - |
+                  function preprocess(value) {
+                      // Удаление нежелательных символов и замена запятой на точку
+                      var cleanedValue = value.replace(/[^\d\,\.]/g, '').replace(',', '.');
+                  
+                      // Преобразование в число с плавающей точкой
+                      var floatValue = parseFloat(cleanedValue);
+                  
+                      // Возвращаем преобразованное значение
+                      return floatValue;
+                  }
+                  
+                  // Получаем входное значение от Zabbix
+                  var originalValue = value;
+                  
+                  // Применяем функцию предобработки
+                  var processedValue = preprocess(originalValue);
+                  
+                  // Возвращаем обработанное значение обратно в Zabbix
+                  return processedValue;
