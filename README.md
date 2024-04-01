@@ -11,6 +11,6 @@ Guide:
 3. Now you need to download LHM.ps1, change your $hostname and $server in it and add it to the startup/task scheduler. If your zabbix-sender.exe location is different from "C:\Program Files\Zabbix Agent 2\zabbix_sender.exe", you should change it too
 4. And finally, import the LibreHardwareMonitor template.yaml to the server
 
-Important note! I was making this bundle of script+ template for my laptop with 6 CPU cores, video card and NVMe. Your configuration may differ, and the data format in data.json will differ accordingly. If the values are incorrect (and they are likely to be incorrect on systems other than mine), you should check the schema of the data returned by LHM(OHM) localhost:8085/data.json and make appropriate changes to the script and template. I tried to make the code simple, I think you can handle it
+Important note! I was making this bundle of script+template for my laptop with 6 CPU cores, GPU card and NVMe. Your configuration may differ, and the data format in data.json will differ accordingly. If the values are incorrect (and they are likely to be incorrect on systems other than mine), you should check the schema of the data returned by LHM(OHM) localhost:8085/data.json and make appropriate changes to the script and template. I tried to make the code simple, I think you can handle it
 
 Good luck!
